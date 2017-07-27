@@ -1,0 +1,8 @@
+[Bb]in
+[Bb]in/*
+[Dd]ebug
+[Dd]ebug*/
+node_modules
+node_modules/*
+.idea
+.idea/*

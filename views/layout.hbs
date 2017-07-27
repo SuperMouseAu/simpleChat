@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function() {
+            var socket = io();
+            $('form').submit(function(){
+                socket.emit("message", $("#message").val())
+                $("#message").val("");
+                return false;
+            })
+            socket.on("message", function(text){
+                $("#chatBoard").append($('<li>').text(text));
+            })
+        })
+
+    </script>
+  </head>
+  <body>
+    {{{body}}}
+  </body>
+</html>
